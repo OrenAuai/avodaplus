@@ -23,7 +23,7 @@ function generateHTMLPage(data) {
   for (let row of data) {
     const { title, subtitle, paragraph, image } = row;
     html += '<div class="full-width-div"><div class="Container 2"><div class="content-wrapper">\n';
-    html += `<div class="img left"><img class="img" src="${image}" alt="Image"><\div><\div>\n`;
+    html += `<div class="img left"><img class="img" src="${image}" alt="Image"></div>\n`;
     html += `<div class="text-right"><div class="title">${title}</div>\n`;
     html += `<div class="subtitle">${subtitle}</div>\n`;
     html += `<div class="p-content">${paragraph}</div></div></div></div>\n`;
