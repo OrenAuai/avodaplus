@@ -1,3 +1,4 @@
+<script>
 // Sample data in JSON format
 const jsonData = [
  {
@@ -42,3 +43,4 @@ function writeHTMLToDOM(html) {
 // Generate HTML using the provided JSON data
 const generatedHTML = generateHTMLPage(jsonData);
 writeHTMLToDOM(generatedHTML);
+</script>
