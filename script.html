@@ -44,7 +44,7 @@ function generateHTMLPage(data) {
     html += `<div class="text-right"><div class="title margin-bottom-32px">${title}</div>\n`;
     html += `<div class="subtitle">${subtitle}</div>\n`;
     let xml = ${paragraph};
-    let decodedEntity = parser.parseFromString(`${xml}`, "text/html").body.textContent;
+    let decodedEntity = parser.parseFromString(xml, "text/html").body.textContent;
     html += `<div class="p-content">${decodedEntity}</div></div></div></div>\n`;
 
     html += '</div>\n';
