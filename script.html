@@ -36,15 +36,18 @@
 // Function to generate HTML page
 function generateHTMLPage(data) {
   let html = '';
-  const parser = new DOMParser();  
+  const parser = new DOMParser();
+  let xmltext = "";
+  let decodedEntity = parser.parseFromString(xmltext, "text/html").body.textContent;
+
   for (let row of data) {
     const { title, subtitle, paragraph, image } = row;
     html += '<div class="full-width-div"><div class="container-2"><div class="content-wrapper">\n';
     html += `<div class="img-left"><img class="img" src="${image}" alt="Image"></div>\n`;
     html += `<div class="text-right"><div class="title margin-bottom-32px">${title}</div>\n`;
     html += `<div class="subtitle">${subtitle}</div>\n`;
-    let xml = ${paragraph};
-    let decodedEntity = parser.parseFromString(`${xml}`, "text/html").body.textContent;
+    xmltext = {paragraph};
+    decodedEntity = parser.parseFromString(xmltext, "text/html").body.textContent;
     html += `<div class="p-content">${decodedEntity}</div></div></div></div>\n`;
 
     html += '</div>\n';
@@ -53,9 +56,9 @@ function generateHTMLPage(data) {
   return html;
 }
 
+let decodedEntity = parser.parseFromString(`<!doctype html><body>${htmlEntity}`, "text/html").body.textContent;
 
-
-
+console.log(decodedEntity); // Output: <
 
 // Function to write HTML to the DOM
 function writeHTMLToDOM(html) {
