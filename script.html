@@ -37,8 +37,8 @@
 function generateHTMLPage(data) {
   let html = '';
   const parser = new DOMParser();
-  let xmltext = "";
-  let decodedEntity = parser.parseFromString(xmltext, "text/html").body.textContent;
+  let originText = "";
+  let decodedEntity = parser.parseFromString(originText, "text/html").body.textContent;
 
   for (let row of data) {
     const { title, subtitle, paragraph, image } = row;
@@ -46,9 +46,9 @@ function generateHTMLPage(data) {
     html += `<div class="img-left"><img class="img" src="${image}" alt="Image"></div>\n`;
     html += `<div class="text-right"><div class="title margin-bottom-32px">${title}</div>\n`;
     html += `<div class="subtitle">${subtitle}</div>\n`;
-    xmltext = {paragraph};
-    decodedEntity = parser.parseFromString(xmltext, "text/html").body.textContent;
-    html += `<div class="p-content">${decodedEntity}</div></div></div></div>\n`;
+    originText = {paragraph};
+    decodedEntity = parser.parseFromString(originText, "text/html").body.textContent;
+    html += `<div class="p-content">` + decodedEntity + `</div></div></div></div>\n`;
 
     html += '</div>\n';
   }
