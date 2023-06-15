@@ -46,7 +46,7 @@ function generateHTMLPage(data) {
     html += `<div class="img-left"><img class="img" src="${image}" alt="Image"></div>\n`;
     html += `<div class="text-right"><div class="title margin-bottom-32px">${title}</div>\n`;
     html += `<div class="subtitle">${subtitle}</div>\n`;
-    originText = {paragraph};
+    originText = paragraph;
     decodedEntity = parser.parseFromString(originText, "text/html").body.textContent;
     html += `<div class="p-content">` + decodedEntity + `</div></div></div></div>\n`;
 
