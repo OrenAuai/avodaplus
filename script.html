@@ -37,7 +37,7 @@
 function generateHTMLPage(data) {
   let html = '';
   const parser = new DOMParser();
-  let decodedEntity = parser;
+  let decodedEntity = "";
 
   for (let row of data) {
     const { title, subtitle, paragraph, image } = row;
